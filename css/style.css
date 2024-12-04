@@ -26,16 +26,52 @@ h2 {
     padding-bottom: 5px;
 }
 
-#matches-list {
+#matches-list, #foods-list, #friends-list {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
 }
 
 #matches-list li {
     background: #ecf0f1;
-    margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
+    display: -webkit-inline-box;
+    width: 500px;
+    margin: 10px;
+}
+
+#foods-list li {
+    background: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    display: -webkit-inline-box;
+    width: 275px;
+    margin: 10px;
+}
+
+#friends-list li {
+    background: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    display: -webkit-inline-box;
+    width: 500px;
+    margin: 10px;
+}
+
+#matches-list li p, #foods-list li p, #friends-list li p {
+    line-height: 25px;
+    margin: 0 auto;
+}
+
+.partida, .comida, .amigo {
+    cursor: pointer;
+}
+
+.partida.selected, .comida.selected, .amigo.selected {
+    border: 2px black solid;
 }
 
 form {

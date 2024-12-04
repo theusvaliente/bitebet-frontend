@@ -15,24 +15,15 @@
             <h2>Partidas Disponíveis</h2>
             <ul id="matches-list"></ul>
         </section>
-        <section id="bet-section">
-            <h2>Faça sua Aposta</h2>
-            <form id="bet-form">
-                <label for="match-select">Selecione a Partida:</label>
-                <select id="match-select" required></select>
-
-                <label for="prize-select">Selecione o Prêmio:</label>
-                <select id="prize-select" required>
-                    <option value="camiseta">Pizza</option>
-                    <option value="boné">Lanche</option>
-                    <option value="caneca">Espetinho</option>
-                    <option value="boné">Pastel</option>
-                    <option value="caneca">Cerveja</option>
-                </select>
-
-                <button type="submit">Confirmar Aposta</button>
-            </form>
+        <section id="foods-section">
+            <h2>Comidas Disponíveis</h2>
+            <ul id="foods-list"></ul>
         </section>
+        <section id="friends-section">
+            <h2>Lista de amigos</h2>
+            <ul id="friends-list"></ul>
+        </section>
+        <button onclick="criarAposta()">Confirmar Aposta</button>
     </main>
     <script src="js/script.js"></script>
 </body>
