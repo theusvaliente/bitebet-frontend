@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteBet - Escolha sua Partida</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>BiteBet - Escolha sua Partida</h1>
+    </header>
+    <main>
+        <section id="match-section">
+            <h2>Partidas Disponíveis</h2>
+            <ul id="matches-list"></ul>
+        </section>
+        <section id="bet-section">
+            <h2>Faça sua Aposta</h2>
+            <form id="bet-form">
+                <label for="match-select">Selecione a Partida:</label>
+                <select id="match-select" required></select>
+
+                <label for="prize-select">Selecione o Prêmio:</label>
+                <select id="prize-select" required>
+                    <option value="camiseta">Pizza</option>
+                    <option value="boné">Lanche</option>
+                    <option value="caneca">Espetinho</option>
+                    <option value="boné">Pastel</option>
+                    <option value="caneca">Cerveja</option>
+                </select>
+
+                <button type="submit">Confirmar Aposta</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
