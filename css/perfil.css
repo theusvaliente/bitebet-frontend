@@ -1,0 +1,118 @@
+body {
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.profile-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 60%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu span:hover + .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    text-align: left;
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.dropdown-content a:hover {
+    color: #00FF7F;
+}
+
+.logout {
+    background-color: #FF6347;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout:hover {
+    background-color: #FF4500;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.upload-photo {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #00FF7F;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profile-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.team-logo img {
+    width: 50px;
+    margin-top: 10px;
+}
+
+.upcoming-games h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.upcoming-games ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.upcoming-games li {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,117 @@
+/* Estilos Globais */
+body {
+    background-image: url('../img/bg.jpg'); /* Substitua pelo caminho da sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100vh; /* Garantir que o corpo ocupe toda a altura da tela */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container do Logo */
+.logo-container img {
+    max-width: 1000px; /* Aumentar o tamanho do logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#logo {
+    width: 350px; /* ajuste o tamanho conforme necessário */
+    position: absolute;
+    top: -120px; /* ajuste conforme o posicionamento desejado */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+
+/* Estilos do Card */
+.card {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 850px; /* Tamanho maior do card */
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do Formulário */
+h3 {
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px; /* Ajustado o espaçamento do título */
+}
+
+/* Labels dos Campos */
+.form-group label {
+    color: #ccc;
+    font-size: 14px; /* Fonte um pouco menor */
+    margin-bottom: 5px; /* Menor espaço entre o label e o input */
+}
+
+/* Campos de Entrada */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Arredondamento dos cantos */
+    padding: 10px; /* Padding reduzido para caixas mais finas */
+    color: white;
+    font-size: 14px; /* Fonte um pouco menor */
+    margin-bottom: 10px; /* Menor espaço entre os campos */
+}
+
+/* Placeholder dos Campos */
+.form-control::placeholder {
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* Foco nos Campos */
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+}
+
+/* Botão Customizado */
+.btn-custom {
+    background-color: #00ff66;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Hover do Botão */
+.btn-custom:hover {
+    background-color: #00cc52;
+}
+
+/* Responsividade para Telas Menores */
+@media (max-width: 992px) {
+    .card {
+        max-width: 700px; /* Ajuste para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 90%; /* Ajuste para telas pequenas */
+        padding: 15px;
+    }
+    .logo-container img {
+        max-width: 200px; /* Reduz o tamanho do logo em telas menores */
+    }
+}
+
+
+  
+  

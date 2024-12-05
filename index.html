@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - BiteBet</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Seu CSS personalizado -->
+    <link rel="stylesheet" href="css/cadastro.css">
+
+</head>
+<body>
+
+    <!-- Logo posicionado acima do card -->
+    <div class="logo-container text-center mb-4">
+        <img src="img/logo2.png" id="logo" alt="Logo">
+    </div>
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="card p-4 shadow-lg">
+            <h4 class="mb-4 text-center">Cadastro</h4>
+            <form id="cadastroForm">
+                <!-- Primeira Linha de Campos -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nomeCompleto">Nome Completo</label>
+                        <input type="text" class="form-control" id="nomeCompleto" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cpf">CPF</label>
+                        <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF" required>
+                    </div>
+                </div>
+                <!-- Segunda Linha de Campos -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="telefone">Número de Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" placeholder="Digite seu número de telefone" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="dataNascimento" required>
+                    </div>
+                </div>
+                <!-- Terceira Linha de Campos -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="endereco">Endereço Completo</label>
+                        <input type="text" class="form-control" id="endereco" placeholder="Digite seu endereço" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="time">Time do Coração</label>
+                        <input type="text" class="form-control" id="time" placeholder="Digite seu time do coração" required>
+                    </div>
+                </div>
+                <!-- Quarta Linha de Campos (Senha) -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="senha">Senha</label>
+                        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="confirmarSenha">Confirmar Senha</label>
+                        <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme sua senha" required oninput="validarSenha()">
+                        <small id="senhaAviso" class="form-text text-danger" style="display:none;">As senhas não coincidem!</small>
+                    </div>                      
+                </div>
+                <!-- Botão de Cadastro -->
+                <button type="submit" class="btn btn-custom btn-block mt-4">CADASTRAR</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts do Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="js/cadastro.js"></script>
+   
+</body>
+</html>
