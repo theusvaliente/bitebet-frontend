@@ -30,37 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Impede o envio padrão do formulário
     
-     
-        const apiURL = "http://localhost:3333/register";
+        const dados = {
+            nomeCompleto: document.getElementById('nomeCompleto').value,
+            cpf: document.getElementById('cpf').value,
+            telefone: document.getElementById('telefone').value,
+            dataNascimento: document.getElementById('dataNascimento').value,
+            endereco: document.getElementById('endereco').value,
+            time: document.getElementById('time').value,
+            senha: document.getElementById('senha').value
+        };
     
         try {
-
-            const dados = {
-                nomeCompleto: document.getElementById('nomeCompleto').value,
-                cpf: document.getElementById('senha').value,
-                dataNascimento: new Date(document.getElementById('senha').value).getTime(),        
-                time: document.getElementById('time').value,
-                cep: '13000000',
-                logradouro: 'Avenida',
-                numero: '1',
-                complemento: '1',
-                celular: document.getElementById('telefone').value,
-                email: document.getElementById('email').value,
-            };
-                
-            const response = await fetch(apiURL, {
-                mode: 'cors',
-                method:'post',
-                headers: {
-                    'Access-Control-Allow-Origin':'*',
-                    'Content-Type': 'application/json'
-                },
+            const response = await fetch('http://localhost:3000/api/cadastro', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dados)
             });
-    
-              
-    
-        
     
             const resultado = await response.json();
             if (response.ok) {
