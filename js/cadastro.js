@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             avisoSenha.style.display = 'none'; // Esconde o aviso
         }
+
+        window.addEventListener("load", fetchTeams);
     });
 
     // Função para validar senhas durante a digitação
@@ -25,20 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
             avisoSenha.style.display = 'none';
         }
     });
-    
+
     // Envio do formulário com validação e redirecionamento após o cadastro
     document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Impede o envio padrão do formulário
-    
-     
         const apiURL = "http://localhost:3333/register";
     
         try {
-
             const dados = {
                 nomeCompleto: document.getElementById('nomeCompleto').value,
                 cpf: document.getElementById('senha').value,
-                dataNascimento: new Date(document.getElementById('senha').value).getTime(),        
+                dataNascimento: new Date(document.getElementById('dataNascimento').value).getTime(),
                 time: document.getElementById('time').value,
                 cep: '13000000',
                 logradouro: 'Avenida',
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 celular: document.getElementById('telefone').value,
                 email: document.getElementById('email').value,
             };
-                
+
             const response = await fetch(apiURL, {
                 mode: 'cors',
                 method:'post',
@@ -57,18 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify(dados)
             });
-    
-              
-    
-        
-    
-            const resultado = await response.json();
+
             if (response.ok) {
-                alert(resultado.message); // Mostra mensagem de sucesso
+                alert('Cadastrado com sucesso!'); // Mostra mensagem de sucesso
                 document.getElementById('cadastroForm').reset(); // Limpa o formulário
                 window.location.href = '/perfil.html'; // Redireciona para a página de perfil
+
+                sessionStorage.setItem('nome', dados.nomeCompleto);
+                sessionStorage.setItem('email', dados.email);
+                sessionStorage.setItem('time', dados.time);
             } else {
-                alert('Erro: ' + resultado.message);
+                alert('Erro: Usuário já existe!');
             }
         } catch (error) {
             console.error('Erro:', error);
@@ -76,3 +74,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+async function fetchTeams() {
+    try {
+        const apiURL = "http://localhost:3333/teams";
+
+        const response = await fetch(apiURL, {
+            mode: 'cors',
+            headers: {
+              'Access-Control-Allow-Origin':'*',
+              'accept': 'application/json'
+            }
+        });
+
+        const times = await response.json();
+
+        const listaTimes = document.getElementById("time");
+
+        times.forEach((time) => {
+            const idTime = time.idTime;
+            const nomeTime = time.nomeTime;
+
+            const option = document.createElement("option");
+
+            option.value = idTime;
+            option.textContent = nomeTime;
+            listaTimes.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Erro ao buscar times:", error);
+    }
+}

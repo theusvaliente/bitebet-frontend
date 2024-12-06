@@ -25,28 +25,23 @@
         <!-- Seção de Perfil -->
         <div class="profile-content">
             <div class="profile-photo">
-                <img src="path/to/profile-placeholder.png" alt="Foto de Perfil">
+                <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="Foto de Perfil">
                 <button class="upload-photo">Alterar Foto</button>
             </div>
             <div class="profile-info">
-                <h2>Nome do Usuário</h2>
+                <h2 id="userName"></h2>
                 <div class="team-logo">
-                    <img src="path/to/team-logo.png" alt="Logo do Time">
+                    <img id="logoTeam" alt="Logo do Time">
+                    <p id="nameTeam"></p>
                 </div>
-                <p>Time do Coração: Nome do Time</p>
             </div>
         </div>
     
         <!-- Jogos do Dia -->
         <section class="upcoming-games">
             <h3>Jogos do Dia</h3>
-            <ul>
-                <li>Jogo 1 - Time A vs Time B</li>
-                <li>Jogo 2 - Time C vs Time D</li>
-                <li>Jogo 3 - Time E vs Time F</li>
-            </ul>
+            <ul id="matches-list"></ul>
         </section>
     </div>
-    
 </body>
 </html>

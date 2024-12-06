@@ -1,46 +1,73 @@
-document.addEventListener("DOMContentLoaded", async () => {
-    const timeFavorito = "Nome do Time do Coração"; // Substitua pelo time do banco de dados
+async function fetchMatches() {
+    const apiURL = "http://localhost:3333/partidas";
 
-    document.getElementById("timeFavorito").textContent = timeFavorito;
-    document.getElementById("nomeTime").textContent = timeFavorito;
+    try {
+        const response = await fetch(apiURL, {
+            mode: 'cors',
+            headers: {
+              'Access-Control-Allow-Origin':'*',
+              'accept': 'application/json'
+            }
+        });
 
-    // Função para buscar notícias do time favorito
-    async function fetchNoticias() {
-        try {
-            const response = await fetch(`/api/noticias/${timeFavorito}`);
-            const noticias = await response.json();
-            const listaNoticias = document.getElementById("listaNoticias");
-            listaNoticias.innerHTML = "";
+        const partidas = await response.json();
 
-            noticias.forEach(noticia => {
+        const matchesList = document.getElementById("matches-list");
+
+        partidas.forEach((partida) => {
+            const idPartida = partida.idPartida;
+            const dataPartida = partida.dataPartida;
+            const timeCasa = partida.timeCasa;
+            const timeFora = partida.timeFora;
+            const idTimeCasa = partida.idTimeCasa;
+            const idTimeFora = partida.idTimeFora;
+            const imagemTimeCasa = partida.imagemTimeCasa;
+            const imagemTimeFora = partida.imagemTimeFora;
+
+            const time = sessionStorage.getItem('idTime');
+
+            if (time && idTimeCasa === time || idTimeFora === time) {
+                // Adicionar partidas à lista
                 const li = document.createElement("li");
-                li.textContent = noticia.titulo;
-                listaNoticias.appendChild(li);
-            });
-        } catch (error) {
-            console.error("Erro ao buscar notícias:", error);
-        }
+
+                li.className = "partida";
+                li.id = idPartida;
+
+                matchesList.appendChild(li);
+
+                const tagImgTimeCasa = document.createElement("img");
+                const tagImgTimeFora = document.createElement("img");
+
+                tagImgTimeCasa.src = imagemTimeCasa;
+                tagImgTimeFora.src = imagemTimeFora;
+                tagImgTimeCasa.setAttribute('width', '50px');
+                tagImgTimeFora.setAttribute('width', '50px');
+
+                const tagParagrafo = document.createElement("p");
+                tagParagrafo.innerHTML = `<b>${timeCasa}</b> vs <b>${timeFora}</b><br><center>${dataPartida}</center>`;
+
+                li.appendChild(tagImgTimeCasa);
+                li.appendChild(tagParagrafo);
+                li.appendChild(tagImgTimeFora);
+            }
+        });
+    } catch (error) {
+        console.error("Erro ao buscar partidas:", error);
     }
+}
 
-    // Função para buscar jogos da Série A e B
-    async function fetchJogos() {
-        try {
-            const response = await fetch(`/api/jogos`);
-            const jogos = await response.json();
-            const listaJogos = document.getElementById("listaJogos");
-            listaJogos.innerHTML = "";
+async function fetchUser() {
+    const userName = document.getElementById("userName");
+    userName.textContent = sessionStorage.getItem('nome') || 'Usuário';
 
-            jogos.forEach(jogo => {
-                const li = document.createElement("li");
-                li.textContent = `${jogo.timeCasa} vs ${jogo.timeVisitante} - ${jogo.data}`;
-                listaJogos.appendChild(li);
-            });
-        } catch (error) {
-            console.error("Erro ao buscar jogos:", error);
-        }
-    }
+    sessionStorage.getItem('email');
 
-    // Chamar funções ao carregar a página
-    fetchNoticias();
-    fetchJogos();
-});
+    const teamName = document.getElementById("nameTeam");
+    teamName.textContent = sessionStorage.getItem('nomeTime') || 'Time';
+
+    const logoTeam = document.getElementById("logoTeam");
+    logoTeam.src = sessionStorage.getItem('imagemTime');
+}
+
+window.addEventListener("load", fetchMatches);
+window.addEventListener("load", fetchUser);

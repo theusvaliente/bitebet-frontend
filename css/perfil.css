@@ -116,3 +116,33 @@ header {
     font-size: 1.2em;
     margin-bottom: 8px;
 }
+
+.profile-info {
+    width: 100%;
+}
+
+#matches-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+#matches-list li {
+    padding: 10px;
+    border-radius: 5px;
+    display: -webkit-inline-box;
+    width: 100%;
+    margin: 10px;
+}
+
+#matches-list li p {
+    line-height: 25px;
+    margin: 0 auto;
+}
+
+.team-logo {
+    display: inline-flex;
+    line-height: 28px;
+}

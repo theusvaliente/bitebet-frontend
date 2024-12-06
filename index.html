@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Seu CSS personalizado -->
     <link rel="stylesheet" href="css/cadastro.css">
-
 </head>
 <body>
 
@@ -47,7 +46,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="time">Time do Coração</label>
-                        <input type="text" class="form-control" id="time" placeholder="Digite seu time do coração" required>
+                        <select type="text" class="form-control" id="time" placeholder="Digite seu time do coração" required>
                     </div>
                 </div>
                 <!-- Quarta Linha de Campos (Senha) -->
@@ -60,7 +59,7 @@
                         <label for="confirmarSenha">Confirmar Senha</label>
                         <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme sua senha" required oninput="validarSenha()">
                         <small id="senhaAviso" class="form-text text-danger" style="display:none;">As senhas não coincidem!</small>
-                    </div>                      
+                    </div>
                 </div>
                 <!-- Botão de Cadastro -->
                 <button type="submit" class="btn btn-custom btn-block mt-4">CADASTRAR</button>

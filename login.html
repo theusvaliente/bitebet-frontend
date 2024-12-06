@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BiteBet</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Seu CSS personalizado -->
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+
+    <!-- Logo posicionado acima do card -->
+    <div class="logo-container text-center mb-4">
+        <img src="img/logo2.png" id="logo" alt="Logo">
+    </div>
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="card p-4 shadow-lg">
+            <h4 class="mb-4 text-center">Login</h4>
+            <form id="loginForm">
+                <!-- Primeira Linha de Campos -->
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="cpf">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Digite seu email" required>
+                    </div>
+                </div>  
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="senha">Senha</label>
+                        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block mt-4">LOGAR</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts do Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="js/login.js"></script>
+   
+</body>
+</html>
