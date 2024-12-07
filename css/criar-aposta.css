@@ -1,0 +1,179 @@
+body {
+    background-image: url('../img/bg.jpg'); /* Substitua pelo caminho da sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100vh; /* Garantir que o corpo ocupe toda a altura da tela */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cabeçalho e navegação */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    position: fixed;
+    width: 97%;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 20px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #00ff88;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #00ff88;
+}
+
+/* Espaçamento para o conteúdo abaixo do cabeçalho */
+main {
+    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding: 20px;
+}
+
+/* Seções */
+section {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #00ff88;
+}
+
+/* Formulários */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+select {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    outline: none;
+}
+
+button {
+    background-color: #00ff88;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #00cc6e;
+}
+
+#matches-list li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#matches-list, #foods-list, #friends-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+#matches-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    display: -webkit-inline-box;
+    width: 100%;
+    margin: 10px;
+}
+
+#foods-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    display: -webkit-inline-box;
+    width: 258px;
+    margin: 10px;
+}
+
+#friends-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    display: -webkit-inline-box;
+    width: 100%;
+    margin: 10px;
+}
+
+#matches-list li p, #foods-list li p, #friends-list li p {
+    line-height: 25px;
+    margin: 0 auto;
+}
+
+.partida, .comida, .amigo {
+    cursor: pointer;
+}
+
+.partida.selected, .comida.selected, .amigo.selected {
+    border: 2px white solid;
+}

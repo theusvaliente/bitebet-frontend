@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             avisoSenha.style.display = 'none'; // Esconde o aviso
         }
-
-        window.addEventListener("load", fetchTeams);
     });
 
     // Função para validar senhas durante a digitação
@@ -105,3 +103,5 @@ async function fetchTeams() {
         console.error("Erro ao buscar times:", error);
     }
 }
+
+window.addEventListener("load", fetchTeams);
