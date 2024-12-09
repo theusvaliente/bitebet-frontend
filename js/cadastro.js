@@ -56,13 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                alert('Cadastrado com sucesso!'); // Mostra mensagem de sucesso
-                document.getElementById('cadastroForm').reset(); // Limpa o formulário
-                window.location.href = '/perfil.html'; // Redireciona para a página de perfil
+                const dados = await response.json();
 
                 sessionStorage.setItem('nome', dados.nomeCompleto);
                 sessionStorage.setItem('email', dados.email);
-                sessionStorage.setItem('time', dados.time);
+                sessionStorage.setItem('idUser', dados.idUser);
+                sessionStorage.setItem('idTime', dados.time);
+                sessionStorage.setItem('nomeTime', dados.nomeTime);
+                sessionStorage.setItem('imagemTime', dados.imagemTime);
+
+                window.location.href = '/perfil.html';
             } else {
                 alert('Erro: Usuário já existe!');
             }

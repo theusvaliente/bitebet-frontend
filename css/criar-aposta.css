@@ -12,17 +12,19 @@ body {
     justify-content: center;
 }
 
-/* Cabeçalho e navegação */
-header {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px 20px;
-    position: fixed;
-    width: 97%;
-    top: 0;
-    z-index: 1000;
+.logo-container img {
+    max-width: 1000px; /* Aumentar o tamanho do logo */
+    height: auto;
     margin-bottom: 20px;
 }
 
+#logo {
+    width: 350px; /* ajuste o tamanho conforme necessário */
+    position: absolute;
+    top: -120px; /* ajuste conforme o posicionamento desejado */
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
 .navbar {
     display: flex;
@@ -57,7 +59,7 @@ header {
 }
 
 .menu a:hover {
-    color: #00ff88;
+    color: #87a92e;
 }
 
 /* Espaçamento para o conteúdo abaixo do cabeçalho */
@@ -84,7 +86,7 @@ h2 {
     margin-bottom: 20px;
     font-size: 1.5rem;
     text-align: center;
-    color: #00ff88;
+    color: #87a92e;
 }
 
 /* Formulários */
@@ -110,15 +112,17 @@ select {
 }
 
 button {
-    background-color: #00ff88;
+    background-color: #87a92e;
     color: #000;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
+    width: 300px;
+    margin-top: 30px;
 }
 
 button:hover {
-    background-color: #00cc6e;
+    background-color: #87a92e;
 }
 
 #matches-list li {

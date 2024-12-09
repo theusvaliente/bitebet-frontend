@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const dados = await response.json();
 
                 sessionStorage.setItem('nome', dados.nomeCompleto);
-                sessionStorage.setItem('email', dados.email);
+                sessionStorage.setItem('idUser', dados.idUser);
                 sessionStorage.setItem('idTime', dados.time);
                 sessionStorage.setItem('nomeTime', dados.nomeTime);
                 sessionStorage.setItem('imagemTime', dados.imagemTime);
 
-                window.location.href = '/perfil.html'; // Redireciona para a página de perfil
+                window.location.href = '/perfil.html';
             } else {
                 alert('Erro: Usuário ou senha errados!');
             }

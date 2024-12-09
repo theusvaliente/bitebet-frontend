@@ -80,7 +80,7 @@ h3 {
 
 /* Botão Customizado */
 .btn-custom {
-    background-color: #00ff66;
+    background-color: #87a92e;
     border: none;
     border-radius: 25px;
     padding: 12px;
@@ -91,9 +91,26 @@ h3 {
     margin-top: 20px;
 }
 
+.btn-other {
+    background-color: transparent;
+    border-color: #87a92e;
+    border-radius: 25px;
+    padding: 12px;
+    color: #FFF;
+    font-size: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
 /* Hover do Botão */
 .btn-custom:hover {
-    background-color: #00cc52;
+    background-color: #87a92e;
+}
+
+/* Hover do Botão */
+.btn-other:hover {
+    color: #FFF;
 }
 
 /* Responsividade para Telas Menores */
@@ -112,7 +129,3 @@ h3 {
         max-width: 200px; /* Reduz o tamanho do logo em telas menores */
     }
 }
-
-
-  
-  

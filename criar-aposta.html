@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/criar-aposta.css">
 </head>
 <body>
-    <header>
-        <h1>BiteBet - Escolha sua Partida</h1>
-    </header>
+    <div class="logo-container text-center mb-4">
+        <img src="img/logoCanva.png" id="logo" alt="Logo">
+    </div>
     <main>
         <section id="match-section">
             <h2>Partidas Disponíveis</h2>
@@ -23,7 +23,9 @@
             <h2>Lista de amigos</h2>
             <ul id="friends-list"></ul>
         </section>
-        <button onclick="criarAposta()">Confirmar Aposta</button>
+        <center>
+            <button onclick="criarAposta()">Confirmar Aposta</button>
+        </center>
     </main>
     <script src="js/script.js"></script>
 </body>

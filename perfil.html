@@ -9,24 +9,14 @@
 </head>
 <body>
     <div class="profile-container">
-        <!-- Header com Menu e Botão de Sair -->
         <header>
-            <div class="menu">
-                <span>Menu</span>
-                <div class="dropdown-content">
-                    <a href="#">Apostas</a>
-                    <a href="#">Histórico</a>
-                    <a href="#">Notícias</a>
-                </div>
-            </div>
+            <button class="criar-aposta" onclick="window.location.href='criar-aposta.html'">Criar aposta</button>
             <button class="logout" onclick="window.location.href='index.html'">Sair</button>
         </header>
     
-        <!-- Seção de Perfil -->
         <div class="profile-content">
             <div class="profile-photo">
                 <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="Foto de Perfil">
-                <button class="upload-photo">Alterar Foto</button>
             </div>
             <div class="profile-info">
                 <h2 id="userName"></h2>
@@ -36,8 +26,21 @@
                 </div>
             </div>
         </div>
-    
-        <!-- Jogos do Dia -->
+
+        <hr>
+        <section class="upcoming-games">
+            <h3>Apostas em andamento</h3>
+            <ul id="bets-list"></ul>
+        </section>
+
+        <hr>
+        <section class="upcoming-games">
+            <h3>Apostas finalizadas</h3>
+            <ul id="bets-old"></ul>
+        </section>
+
+
+        <hr>
         <section class="upcoming-games">
             <h3>Jogos do Dia</h3>
             <ul id="matches-list"></ul>

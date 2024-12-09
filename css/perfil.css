@@ -54,6 +54,16 @@ header {
     color: #00FF7F;
 }
 
+.criar-aposta {
+    background-color: #87a92e;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .logout {
     background-color: #FF6347;
     color: #fff;
@@ -85,7 +95,7 @@ header {
     display: block;
     margin-top: 10px;
     padding: 5px 10px;
-    background-color: #00FF7F;
+    background-color: #87a92e;
     color: #000;
     border: none;
     border-radius: 10px;
@@ -121,7 +131,7 @@ header {
     width: 100%;
 }
 
-#matches-list {
+#matches-list, #bets-list, #bets-old {
     list-style: none;
     padding: 0;
     display: flex;
@@ -129,7 +139,8 @@ header {
     flex-wrap: wrap;
 }
 
-#matches-list li {
+#matches-list li, #bets-list li, #bets-old li {
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
     border-radius: 5px;
     display: -webkit-inline-box;
@@ -137,7 +148,7 @@ header {
     margin: 10px;
 }
 
-#matches-list li p {
+#matches-list li p, #bets-list li p, #bets-old li p {
     line-height: 25px;
     margin: 0 auto;
 }
@@ -145,4 +156,18 @@ header {
 .team-logo {
     display: inline-flex;
     line-height: 28px;
+}
+
+.li-sem {
+    list-style-type: none !important;
+    display: inline-block !important;
+    margin-right: 20px !important;
+}
+
+.vencedor {
+    color: #87a92e;
+}
+
+.perdedor {
+    color: #FF4500 !important;
 }

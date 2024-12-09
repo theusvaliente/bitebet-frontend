@@ -135,26 +135,29 @@ async function fetchFriends() {
 
         amigos.forEach((amigo) => {
             const idUser = amigo.idUser;
-            const nomeCompleto = amigo.nomeCompleto;
-            const imagemAmigo = "https://cdn-icons-png.flaticon.com/512/6596/6596121.png";
 
-            const li = document.createElement("li");
+            if (idUser !== sessionStorage.getItem('idUser')) {
+                const nomeCompleto = amigo.nomeCompleto;
+                const imagemAmigo = "https://cdn-icons-png.flaticon.com/512/6596/6596121.png";
 
-            li.className = "amigo";
-            li.id = idUser;
+                const li = document.createElement("li");
 
-            frinedsList.appendChild(li);
+                li.className = "amigo";
+                li.id = idUser;
 
-            const tagImgAmigo = document.createElement("img");
+                frinedsList.appendChild(li);
 
-            tagImgAmigo.src = imagemAmigo;
-            tagImgAmigo.setAttribute('width', '50px');
+                const tagImgAmigo = document.createElement("img");
 
-            const tagParagrafo = document.createElement("p");
-            tagParagrafo.innerHTML = `<b>${nomeCompleto}</b>`;
+                tagImgAmigo.src = imagemAmigo;
+                tagImgAmigo.setAttribute('width', '50px');
 
-            li.appendChild(tagImgAmigo);
-            li.appendChild(tagParagrafo);
+                const tagParagrafo = document.createElement("p");
+                tagParagrafo.innerHTML = `<b>${nomeCompleto}</b>`;
+
+                li.appendChild(tagImgAmigo);
+                li.appendChild(tagParagrafo);
+            }
         });
 
         const tagsAmigos = document.querySelectorAll('.amigo')
@@ -171,22 +174,25 @@ async function fetchFriends() {
 
 async function criarAposta() {
     try {
-        console.log(dadosAposta);
-
         const apiURL = "http://localhost:3333/createBet";
+
+        dadosAposta.usuario1 = sessionStorage.getItem('idUser');
 
         const response = await fetch(apiURL, {
             method: 'POST',
             mode: 'cors',
             headers: {
-              'Access-Control-Allow-Origin':'*',
-              'accept': 'application/json'
+                'Access-Control-Allow-Origin':'*',
+                'Content-Type': 'application/json'
             },
-            body: dadosAposta
+            body: JSON.stringify(dadosAposta)
         });
 
-        const aposta = await response.json();
-        console.log(aposta);
+        if (response.ok) {
+            window.location.href = '/perfil.html';
+        } else {
+            alert('Erro: Não foi possivel criar a aposta.');
+        }
     } catch (error) {
         console.error("Erro ao criar aposta:", error);
     }
